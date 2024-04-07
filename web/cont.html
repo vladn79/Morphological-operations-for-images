@@ -7,9 +7,40 @@
     <title>Lab-assigment</title>
     <script type="text/javascript" src="/eel.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
-
+    <script src="script.js" defer></script>
 </head>
 <body>
+      <div class="ch">
+            <div class="dropdown">
+                  <button class="dropbtn">Operation:</button>
+                  <div class="dropdown-content">
+                        <a href="#" onclick="displayResult('Dilation')">Dilation</a>
+                        <a href="#" onclick="displayResult('Erosion')">Erosion</a>
+                        <a href="#" onclick="displayResult('Opening')">Opening</a>
+                        <a href="#" onclick="displayResult('Closing')">Closing</a>
+                  </div>
+                </div>
+            <div class="dropdown">
+                  <button class="dropbtn">Structural element:</button>
+                  <div class="dropdown-content" id="dropdownContent">
+                        <a href="#" onclick="showInput('Rectangle')">Rectangle</a>
+                        <a href="#" onclick="showInput('Circle')">Circle</a>
+                        <a href="#" onclick="showInput('Cross')">Cross</a>
+                      </div>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                  <button class="dropbtn">Your choise:</button>
+                  <div>
+                        <p id="result"></p>
+                        <p id="result1"></p>
+                  </div>
+
+            </div>
+      </div>
+      <div id="inputPopup" class="input-popup">
+            <input type="text" id="shapeInput">
+            <button onclick="submitInput()">OK</button>
+      </div>
 
 </body>
 </html>
