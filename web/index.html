@@ -13,7 +13,15 @@
     <div class="start-page">
         <img src="images\Storey_Calculus_Big.jpg">
         <p>Laboratory assignement 1: Morphological operations.</p> 
-        <button class="button-40" role="button">Start...</button>
+        <button class="button-40" role="button" onclick="redirectToNewPage()">Start...</button>
+   <script>
+      function redirectToNewPage() {
+          document.body.classList.add('fade-out');
+          setTimeout(function() {
+              window.location.href = "cont.html";
+          }, 500); 
+      }
+  </script>
         <p id="name">By Vlad Novitskyi, KNU, 2024</p>
     </div>
 

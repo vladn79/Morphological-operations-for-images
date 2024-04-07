@@ -80,3 +80,8 @@ body{
       color: #6B7280;
       font-size: 12px;
   }
+
+  .fade-out {
+      opacity: 0;
+      transition: opacity 0.5s ease-out; /* Тривалість та функція перехідного ефекту */
+  }
