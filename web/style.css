@@ -180,3 +180,8 @@ body{
       display: none;
       margin-left: 37%;
     }
+
+#uploadButton{
+      margin-left: -3.5%;
+}
+
