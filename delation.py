@@ -48,25 +48,27 @@ def custom_dilation_circular(image, radius):
 
     return result
 
-
-image = cv2.imread('1241241241412343.bmp', cv2.IMREAD_GRAYSCALE)
-rectangle_kernel = np.ones((7, 3), dtype=np.uint8)
-custom_dilated_rectangle = custom_dilation_rectangle(image, rectangle_kernel)
-cv2_dilated_rectangle = cv2.dilate(image, rectangle_kernel)
-
-custom_dilated_cross = custom_dilation_cross(image, 7, 5)
-opencv_dilated_cross = cv2.dilate(image, cv2.getStructuringElement(cv2.MORPH_CROSS, (7, 5)), iterations=1)
-
-custom_dilated_circular = custom_dilation_circular(image, 5)
-opencv_dilated_circular = cv2.dilate(image, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5)), iterations=1)
-cv2.imshow('Custom Dilation Rectangle Kernel', custom_dilated_rectangle)
-cv2.imshow('OpenCV Dilation Rectangle Kernel', cv2_dilated_rectangle)
-
-cv2.imshow('Custom Dilation Cross Kernel', custom_dilated_cross)
-cv2.imshow('OpenCV Dilation Cross Kernel', opencv_dilated_cross)
-
-cv2.imshow('Custom Dilation Circular Kernel', custom_dilated_circular)
-cv2.imshow('OpenCV Dilation Circular Kernel', opencv_dilated_circular)
-
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+if __name__ == '__main__':
+    
+      image = cv2.imread('1241241241412343.bmp', cv2.IMREAD_GRAYSCALE)
+      rectangle_kernel = np.ones((7, 3), dtype=np.uint8)
+      custom_dilated_rectangle = custom_dilation_rectangle(image, rectangle_kernel)
+      cv2_dilated_rectangle = cv2.dilate(image, rectangle_kernel)
+      
+      custom_dilated_cross = custom_dilation_cross(image, 7, 5)
+      opencv_dilated_cross = cv2.dilate(image, cv2.getStructuringElement(cv2.MORPH_CROSS, (7, 5)), iterations=1)
+      
+      custom_dilated_circular = custom_dilation_circular(image, 5)
+      opencv_dilated_circular = cv2.dilate(image, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5)), iterations=1)
+      cv2.imshow('Custom Dilation Rectangle Kernel', custom_dilated_rectangle)
+      cv2.imshow('OpenCV Dilation Rectangle Kernel', cv2_dilated_rectangle)
+      
+      cv2.imshow('Custom Dilation Cross Kernel', custom_dilated_cross)
+      cv2.imshow('OpenCV Dilation Cross Kernel', opencv_dilated_cross)
+      
+      cv2.imshow('Custom Dilation Circular Kernel', custom_dilated_circular)
+      cv2.imshow('OpenCV Dilation Circular Kernel', opencv_dilated_circular)
+      
+      cv2.waitKey(0)
+      cv2.destroyAllWindows()
+      

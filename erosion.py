@@ -47,27 +47,28 @@ def custom_erosion_circular(image, radius):
                 result[i, j] = 255
 
     return result
+if __name__ == '__main__':
 
-image = cv2.imread('1241241241412343.bmp', cv2.IMREAD_GRAYSCALE)
+      image = cv2.imread('1241241241412343.bmp', cv2.IMREAD_GRAYSCALE)
 
-rectangle_kernel = np.ones((7, 3), dtype=np.uint8)
-custom_eroded_rectangle = custom_erosion_rectangle(image, rectangle_kernel)
-cv2_eroded_rectangle = cv2.erode(image, rectangle_kernel)
+      rectangle_kernel = np.ones((7, 3), dtype=np.uint8)
+      custom_eroded_rectangle = custom_erosion_rectangle(image, rectangle_kernel)
+      cv2_eroded_rectangle = cv2.erode(image, rectangle_kernel)
 
-custom_eroded_circular = custom_erosion_circular(image, 5)
-opencv_eroded_circular = cv2.erode(image, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5)), iterations=1)
+      custom_eroded_circular = custom_erosion_circular(image, 5)
+      opencv_eroded_circular = cv2.erode(image, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5)), iterations=1)
 
-custom_eroded_cross = custom_erosion_cross(image, 7, 7)
-opencv_eroded_cross = cv2.erode(image, cv2.getStructuringElement(cv2.MORPH_CROSS, (7, 7)), iterations=1)
+      custom_eroded_cross = custom_erosion_cross(image, 7, 5)
+      opencv_eroded_cross = cv2.erode(image, cv2.getStructuringElement(cv2.MORPH_CROSS, (7, 5)), iterations=1)
 
-cv2.imshow('Custom Erosion Rectangle Kernel', custom_eroded_rectangle)
-cv2.imshow('OpenCV Erosion Rectangle Kernel', cv2_eroded_rectangle)
+      cv2.imshow('Custom Erosion Rectangle Kernel', custom_eroded_rectangle)
+      cv2.imshow('OpenCV Erosion Rectangle Kernel', cv2_eroded_rectangle)
 
-cv2.imshow('Custom Erosion Circular Kernel', custom_eroded_circular)
-cv2.imshow('OpenCV Erosion Circular Kernel', opencv_eroded_circular)
+      cv2.imshow('Custom Erosion Circular Kernel', custom_eroded_circular)
+      cv2.imshow('OpenCV Erosion Circular Kernel', opencv_eroded_circular)
 
-cv2.imshow('Custom Erosion Cross Kernel', custom_eroded_cross)
-cv2.imshow('OpenCV Erosion Cross Kernel', opencv_eroded_cross)
+      cv2.imshow('Custom Erosion Cross Kernel', custom_eroded_cross)
+      cv2.imshow('OpenCV Erosion Cross Kernel', opencv_eroded_cross)
 
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+      cv2.waitKey(0)
+      cv2.destroyAllWindows()
