@@ -23,10 +23,25 @@ function showInput(shape) {
       document.getElementById("shapeInput").value = shape;
     }
 
+   // eel.expose(submitInput);
+    //eel.expose(getResultsArray); // Експорт функції для отримання масиву результатів
+
+    // Функція для відправки даних в Python та отримання результатів
     function submitInput() {
-      var shapeValue = document.getElementById("shapeInput").value;
-      document.getElementById("result1").innerText =  shapeValue;
-      document.getElementById("inputPopup").style.display = "none";
+        var shapeValue = document.getElementById("shapeInput").value;
+        var resultValue = document.getElementById("result").innerText;
+        var result1Value = document.getElementById("result1").innerText;
+    //    eel.add_result_to_array(shapeValue, resultValue, result1Value); // Виклик Python-функції
+        document.getElementById("result1").innerText = shapeValue;
+        document.getElementById("inputPopup").style.display = "none";
+    }
+
+    // Виклик функції для отримання масиву результатів
+   // getResultsArray().then(displayResultsArray);
+
+    // Функція для відображення масиву результатів
+    function displayResultsArray(results) {
+        console.log(results); // Виведення масиву у консоль для перевірки
     }
     document.addEventListener('DOMContentLoaded', function () {
       var fileInput = document.getElementById('fileInput');
