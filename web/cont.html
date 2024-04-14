@@ -5,10 +5,8 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab-assigment</title>
-    <script type="text/javascript" src="/eel.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.js" defer></script>
-</head>
+    <script type="text/javascript" src="eel.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"></head>
 <body>
       <div class="ch">
             <div class="dropdown">
@@ -41,13 +39,24 @@
             <input type="text" id="shapeInput">
             <button  role="button" onclick="submitInput()">ОК</button>
       </div>
-      <div style=" position:static; margin-top: 25%; margin-left: 31%;">
+     <!-- <div style="position:static; margin-top: 25%; margin-left: 31%;">
             <input type="file" id="fileInput">
-            <button id="uploadButton">Upload</button>
+            <button id="uploadButton" onclick="uploadImage()">Upload</button>
             <div id="uploadStatus"></div>
             <div id="imagePreview"></div>
-      </div>
-      <button class="button-40" role="button" onclick="redirectToNewPage()" style="margin-top: 5%;">Calculations</button>
-
+        </div> -->
+    
+        <script>
+            function uploadImage() {
+                var fileInput = document.getElementById('fileInput');
+                var file = fileInput.files[0];
+                var formData = new FormData();
+                formData.append('image', file);
+    
+                eel.upload_image(file.name);
+            }
+        </script>
+        
+      <script src="script.js" defer></script>
 </body>
 </html>
