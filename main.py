@@ -11,12 +11,7 @@ results_array = []
 
 image_path = '1241241241412343.bmp'
 
-
-
-
 image =cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-
-
 
 @eel.expose
 def add_result_to_array(shape, result, result1):
@@ -74,34 +69,10 @@ def add_result_to_array(shape, result, result1):
       if ('Opening' in results_array) and ('Cross' in results_array):
             show_opening_cross(image, results_array[0], results_array[1])
             results_array.clear()
-      
-
-
-      
-
-
-
-      
-      
-      
-      
-
-
 
       print(results_array)
-
-
-
-# Функція для отримання масиву результатів
 @eel.expose
 def get_results_array():
     return results_array
-
-
-
-
-
-    
-
 eel.init('web')
 eel.start('index.html', size=(800, 800))
