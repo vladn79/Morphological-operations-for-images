@@ -9,7 +9,7 @@ from opening import show_opening_circle, show_opening_cross, show_opening_rectan
 results_array = []
 
 
-image_path = '1241241241412343.bmp'
+image_path = 'output_image.bmp'
 
 image =cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
 
